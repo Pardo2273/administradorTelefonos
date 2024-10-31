@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de dispositivos</title>
+</head>
+<body onload="mostrarRegistros()">
+    <!--tabla que muestra todos los registros-->
+    <h1>Dispositivos</h1>
+    <table>
+        <thead>
+            <tr id="encabezados">
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Almacenamiento</th>
+                <th>Procesador</th>
+            </tr>
+        </thead>
+
+        <tbody id="miTabla">
+        </tbody>
+    </table>
+    <br><br>
+    
+    <!-- busca un solo registro-->
+    <div>
+        <h2>Filtrar dispositivos</h2>
+        <label for="numeroInput">¿Desea buscar un solo registro?</label>
+        <input min="1", max="10" type="number" id="numeroInput" placeholder="Buscar entre 1 y 10">
+        <button onclick="mostrarUnSoloRegistro()">Buscar</button>
+        <div>
+            <textarea readonly id="id"></textarea>
+            <textarea readonly id="marca"></textarea>
+            <textarea readonly id="modelo"></textarea>
+            <textarea readonly id="color"></textarea>
+            <textarea readonly id="almacenamiento"></textarea>
+            <textarea readonly id="procesador"></textarea>
+        </div>
+    </div>
+    <br><br>
+
+    <!--guarda un registro-->
+    <div>
+        <h3>Agregar un registro</h3>
+        <div>
+            <label for="identificadorTel">Identificador</label>
+            <input min="11" type="number" id="identificadorTel" placeholder="El identificador debe ser mayor a 10">
+        </div>
+        <div>
+            <label for="marcaTel">Marca</label>
+            <input type="text" id="marcaTel">
+        </div>
+        <div>
+            <label for="modeloTel">Modelo</label>
+            <input type="text" id="modeloTel">
+        </div>
+        <div>
+            <label for="colorTel">Color</label>
+            <input type="text" id="colorTel">
+        </div>
+        <div>
+            <label for="almacenamientoTel">Almacenamiento</label>
+            <input type="text" id="almacenamientoTel">
+        </div>
+        <div>
+            <label for="procesadorTel">Procesador</label>
+            <input type="text" id="procesadorTel">
+        </div>
+        <button onclick="agregarRegistro()">Almacenar</button>
+
+        <div id="respuesta">
+            <!--Para mostrarle al usuario lo que ha creado-->
+        </div>
+    </div>
+    <br><br>
+
+    <!--Para actualizar un registro-->
+    <div>
+        <h3>Modificar registro</h3>
+        <div>
+            <label for="inpBusqueda">Ingrese el número del registro que desea modificar</label><br>
+            <input id="inpBusqueda" type="number" placeholder="Identificador va del 1 al 10">
+            <button onclick="buscarElemento()">Buscar</button>
+        </div><br>
+        <div>
+            <textarea required type="number" id="identTelefono"></textarea>
+        </div>
+        <div>
+            <textarea type="text" id="marcaTelefono"></textarea>
+        </div>
+        <div>
+            <textarea type="text" id="modeloTelefono"></textarea>
+        </div>
+        <div>
+            <textarea type="text" id="colorTelefono"></textarea>
+        </div>
+        <div>
+            <textarea type="text" id="almaTelefono"></textarea>
+        </div>
+        <div>
+            <textarea type="text" id="procTelefono"></textarea>
+        </div>
+        <button onclick="modificarRegistro()">Almacenar</button>
+
+        <div id="respuestaModificacion">
+            <!--Para mostrarle al usuario lo que ha creado-->
+        </div>
+    </div>
+
+    <!--aqui abajo va lo de eliminar-->
+    <div>
+        <h4>Eliminar registro</h4>
+        <div>
+            <label for="idEliminar">Ingrese el identificador para eliminar el registro</label><br>
+            <input id="idEliminar" type="number" placeholder="Identificador va del 1 al 10">
+            <button onclick="eliminarRegistro()">Eliminar</button>
+        </div>
+        <div id="respuestaEliminar">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
